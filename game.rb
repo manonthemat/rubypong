@@ -2,6 +2,7 @@
 
 require 'gosu'
 require './lib/ball'
+require './lib/player'
 
 
 class Pong < Gosu::Window
@@ -16,13 +17,18 @@ class Pong < Gosu::Window
 
 		@left_score = 0
 		@right_score = 0
+
+		@left_player = Player.new(:left)
+		@right_player = Player.new(:right)
 	end
 
 	def draw
 		@ball.draw(self)
+		@left_player.draw(self)
+		@right_player.draw(self)
 
-		@font.draw(@left_score, 30, 15, 0)
-		@font.draw(@right_score, WIDTH-53, 15, 0)
+		@font.draw(@left_score, 30, 15, 0, 1, 1, Gosu::Color::rgb(48,242,128))
+		@font.draw(@right_score, WIDTH-53, 15, 0, 1, 1, Gosu::Color::rgb(48,242,128))
 	end
 
 	def update

@@ -7,7 +7,8 @@ class Ball
 	def initialize
 		@x = Pong::WIDTH/2
 		@y = Pong::HEIGHT/2
-		@angle = rand(100) + 30  
+		@angle = rand(120) + 30
+		@angle *= -1  if rand > 0.5  
 		@speed = 4
 	end
 
