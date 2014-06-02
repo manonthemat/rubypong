@@ -18,7 +18,7 @@ class Pong < Gosu::Window
 		@left_score = 0
 		@right_score = 0
 
-		@left_player = Player.new(:left)
+		@left_player = Player.new(:left, true)
 		@right_player = Player.new(:right)
 	end
 
@@ -34,12 +34,16 @@ class Pong < Gosu::Window
 	def update
 		@ball.move!
 
-		if button_down?(Gosu::KbW)
-			@left_player.up!
-		end
+		if @left_player.ai?
+			@left_player.ai_move!(@ball)
+		else
+			if button_down?(Gosu::KbW)
+				@left_player.up!
+			end
 
-		if button_down?(Gosu::KbS)
-			@left_player.down!
+			if button_down?(Gosu::KbS)
+				@left_player.down!
+			end
 		end
 
 		if button_down?(Gosu::KbUp)
