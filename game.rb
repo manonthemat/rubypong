@@ -3,6 +3,7 @@
 require 'gosu'
 require './lib/ball'
 
+
 class Pong < Gosu::Window
 
 	WIDTH = 768
@@ -26,6 +27,14 @@ class Pong < Gosu::Window
 
 	def update
 		@ball.move!
+		if @ball.off_left?
+			@right_score += 1
+			@ball = Ball.new
+		end
+		if @ball.off_right?
+			@left_score += 1
+			@ball = Ball.new
+		end
 	end
 
 end
