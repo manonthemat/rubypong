@@ -64,4 +64,20 @@ class Ball
 		x2 > Pong::WIDTH
 	end
 
+	def collision?(player)
+		x1 < player.x2 &&
+		x2 > player.x1 &&
+		y1 < player.y2 &&
+		y2 > player.y1
+	end
+
+	def player_bounce!(player)
+		case player.side
+		when :left
+			@x = player.x2 + SIZE/2
+		when :right
+			@x = player.x1 - SIZE/2
+		end
+		@angle = Gosu.angle(0, 0, -dx, dy)
+	end
 end

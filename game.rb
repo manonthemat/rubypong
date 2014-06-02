@@ -50,6 +50,14 @@ class Pong < Gosu::Window
 			@right_player.down!
 		end		
 
+		if @ball.collision?(@left_player)
+			@ball.player_bounce!(@left_player)
+		end
+
+		if @ball.collision?(@right_player)
+			@ball.player_bounce!(@right_player)
+		end
+
 		if @ball.off_left?
 			@right_score += 1
 			@ball = Ball.new
