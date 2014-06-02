@@ -2,6 +2,7 @@
  	
  	WIDTH = 16
  	HEIGHT = 96
+ 	SPEED = 6
 
  	attr_reader :side, :y
  	def initialize(side)
@@ -41,12 +42,16 @@
 	end
 
 	def up!
-		@y -= 4
+		@y -= SPEED
+		if y1 < 0
+			@y = HEIGHT/2
+		end
 	end
 
 	def down!
-		@y += 4
+		@y += SPEED
+		if y2 > Pong::HEIGHT
+			@y = Pong::HEIGHT - HEIGHT/2
+		end		
 	end
-
-
 end
