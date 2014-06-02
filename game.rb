@@ -72,6 +72,11 @@ class Pong < Gosu::Window
 		end
 	end
 
+	def button_down(id)
+		close if id == Gosu::KbQ
+	end
+
+
 end
 
 window = Pong.new

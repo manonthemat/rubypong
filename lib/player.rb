@@ -13,13 +13,15 @@
  	end
 
  	def ai_move!(ball)
- 		if y > ball.y
- 			up!
- 		else
- 			down!
- 		end
+ 		if (y - ball.y).abs > SPEED
+	 		if y > ball.y
+	 			up!
+	 		else
+	 			down!
+	 		end
+	 	end
  	end
- 	
+
 
  	def x1
  		case side
