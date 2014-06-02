@@ -39,4 +39,14 @@
 			x2, y1, color
 			)
 	end
+
+	def up!
+		@y -= 4
+	end
+
+	def down!
+		@y += 4
+	end
+
+
 end

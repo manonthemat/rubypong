@@ -33,6 +33,23 @@ class Pong < Gosu::Window
 
 	def update
 		@ball.move!
+
+		if button_down?(Gosu::KbW)
+			@left_player.up!
+		end
+
+		if button_down?(Gosu::KbS)
+			@left_player.down!
+		end
+
+		if button_down?(Gosu::KbUp)
+			@right_player.up!
+		end
+
+		if button_down?(Gosu::KbDown)
+			@right_player.down!
+		end		
+
 		if @ball.off_left?
 			@right_score += 1
 			@ball = Ball.new
