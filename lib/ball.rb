@@ -9,7 +9,7 @@ class Ball
 		@y = Pong::HEIGHT/2
 		@angle = rand(120) + 30
 		@angle *= -1  if rand > 0.5  
-		@speed = 6
+		@speed = 5
 	end
 
 	def dx
@@ -82,5 +82,6 @@ class Ball
 		ratio = (y - player.y) / Player::HEIGHT
 		@angle = ratio * 120 + 90
 		@angle *= -1 if player.side == :right
+		@speed *= 1.1
 	end
 end
