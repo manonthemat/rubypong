@@ -1,13 +1,29 @@
 class Ball
 
-	SIZE = 8
+	SIZE = 16
 
-	attr_accessor :x, :y
+	attr_accessor :x, :y, :angle, :speed
 
 	def initialize
 		@x = Pong::WIDTH/2
 		@y = Pong::HEIGHT/2
+		@angle = 45
+		@speed = 4
 	end
+
+	def move!
+		dx = Gosu.offset_x(angle, speed)
+		dy = Gosu.offset_x(angle, speed)
+
+		@x += dx
+		@y += dy
+
+		if @y < 0
+			@y =0
+			@angle = Gosu.angle(0, 0, dx, -dy)
+		end
+	end
+
 
 	def x1; @x - SIZE/2; end
 	def x2; @x + SIZE/2; end
