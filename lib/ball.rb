@@ -9,7 +9,7 @@ class Ball
 		@y = Pong::HEIGHT/2
 		@angle = rand(120) + 30
 		@angle *= -1  if rand > 0.5  
-		@speed = 4
+		@speed = 6
 	end
 
 	def dx
@@ -78,6 +78,9 @@ class Ball
 		when :right
 			@x = player.x1 - SIZE/2
 		end
-		@angle = Gosu.angle(0, 0, -dx, dy)
+
+		ratio = (y - player.y) / Player::HEIGHT
+		@angle = ratio * 120 + 90
+		@angle *= -1 if player.side == :right
 	end
 end
