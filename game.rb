@@ -18,6 +18,16 @@ class Pong < Gosu::Window
 		@font = Gosu::Font.new(self, "assets/victor-pixel.ttf", 40)
 		@left_score = 0
 		@right_score = 0
+	# Game Soundtrack
+	@soundtrack = [] 
+	@soundtrack << Gosu::Song.new("assets/audio/cycles.mp3")
+	@song = @soundtrack.first
+    @song.play(looping = true)
+
+	# Game Foley
+	@hit_sample = Gosu::Sample.new(self, "assets/audio/hit.mp3")
+	@miss_sample = Gosu::Sample.new(self, "assets/audio/miss.mp3")
+
   	# Main titles
   	title_screen		
 	end
@@ -90,18 +100,23 @@ class Pong < Gosu::Window
 		end
 
 		if @ball.collision?(@left_player)
+			@hit_sample.play
 			@ball.player_bounce!(@left_player)
 		end
 
 		if @ball.collision?(@right_player)
+			@hit_sample.play
 			@ball.player_bounce!(@right_player)
 		end
 
 		if @ball.off_left?
+			@miss_sample.play
 			@right_score += 1
 			@ball = Ball.new
+
 		end
 		if @ball.off_right?
+			@miss_sample.play
 			@left_score += 1
 			@ball = Ball.new
 		end
