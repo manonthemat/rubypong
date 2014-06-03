@@ -8,8 +8,8 @@ This is a Pong clone written in Ruby using the [Gosu framework](http://code.goog
 # Usage
 
     gem install gosu
-    git clone git://github.com/phorsfall/tetris.git
-    cd tetris
+    git clone git://github.com/llexileon/rubypong.git
+    cd rubypong
     ./game.rb
 
 # Controls
