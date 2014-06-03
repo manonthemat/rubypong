@@ -1,4 +1,31 @@
-rubypong
-========
 
-Building Pong clone in Ruby using the Gosu library.
+# Ruby Pong
+
+This is a Pong clone written in Ruby using the [Gosu framework](http://code.google.com/p/gosu/).
+
+![Screenshot](https://github.com/llexileon/rubypong/assets/screen1.png)
+
+# Usage
+
+    gem install gosu
+    git clone git://github.com/phorsfall/tetris.git
+    cd tetris
+    ./game.rb
+
+# Controls
+
+* Up & Down arrows for Right side player 1, W & S for Left side player 2.
+* Q to quit
+
+
+# Resources
+
+I've tried to implement the mechanics of the game reasonably faithfully thus far.
+For more information, see the [Tetris wiki](http://en.wikipedia.org/wiki/Pong).
+
+# Thanks
+
+The following samples are used with permission.
+
+Soundtrack from http://audionautix.com
+Sound FX sourced from http://www.freesfx.co.uk/
