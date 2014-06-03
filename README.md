@@ -3,7 +3,7 @@
 
 This is a Pong clone written in Ruby using the [Gosu framework](http://code.google.com/p/gosu/).
 
-![Screenshot](https://github.com/llexileon/rubypong/assets/screen1.png)
+![Screenshot](https://raw.githubusercontent.com/llexileon/rubypong/master/assets/screen1.png)
 
 # Usage
 
