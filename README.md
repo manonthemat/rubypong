@@ -21,7 +21,7 @@ This is a Pong clone written in Ruby using the [Gosu framework](http://code.goog
 # Resources
 
 I've tried to implement the mechanics of the game reasonably faithfully thus far.
-For more information, see the [Tetris wiki](http://en.wikipedia.org/wiki/Pong).
+For more information, see the [Pong wiki](http://en.wikipedia.org/wiki/Pong).
 
 # Thanks
 
